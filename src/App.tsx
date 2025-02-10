@@ -14,7 +14,7 @@ function App() {
 
     return (
         <div className="w-2/3 mx-auto my-5">
-            <h1 className="text-4xl">Lazy Loading</h1>
+            <h1 className="text-4xl text-center my-5">Lazy Loading</h1>
             <LazyPosts loaderRef={loaderRef} posts={posts} />
             {loading && <p className="text-center">Cargando más posts...</p>}
         </div>

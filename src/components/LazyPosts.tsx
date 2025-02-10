@@ -3,12 +3,12 @@ import { Post } from "../interfaces/Post";
 
 const PostCard = lazy(() => import('./PostCard'));
 
-export interface Props {
+export interface LazyPostsProps {
     posts: Post[];
     loaderRef: React.RefObject<HTMLDivElement>;
 }
 
-const LazyPosts = ({ posts, loaderRef }: Props) => {
+const LazyPosts = ({ posts, loaderRef }: LazyPostsProps) => {
     return (
         <div className="grid grid-cols-3 gap-5">
             {posts && posts.map(post => (

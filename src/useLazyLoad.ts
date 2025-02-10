@@ -10,7 +10,7 @@ export function useLazyLoad<T extends Post>(fetchData: (page: number) => Promise
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting && !loading) {
-                loadMore();
+                loadMorePosts();
             }
         }, { threshold: 1.0 });
 
@@ -19,7 +19,7 @@ export function useLazyLoad<T extends Post>(fetchData: (page: number) => Promise
         return () => observer.disconnect();
     }, [page, loading]);
 
-    const loadMore = async () => {
+    const loadMorePosts = async () => {
         if (loading) return;
         setLoading(true);
 
